@@ -22,5 +22,6 @@ If the `hunk-review` skill is available, or `hunk skill show` runs, put the revi
 1. Run `hunk session list`. If no session exists for this repo, ask the user to open `hunk diff` in another terminal. If they decline, use the fallback below.
 2. Follow the `hunk-review` skill (or the `hunk skill show` output). Add at most one comment per review stop or key diff excerpt, and skip the ones the code explains. More comments than changed lines of code is a red flag. Order the batch by review order and send it in one `hunk session comment apply --focus` call. The summary is the one-liner; the rationale is 1-3 plain sentences.
 3. In the terminal, start the review plan with one line saying the review comments are in Hunk. The review order stays as its one-liners, and each key diff excerpt shrinks to `path:line`: why it needs attention. This is the user's starting point; the reasoning lives in the Hunk comment. Stops without a comment keep only their one-liner.
+4. If the code changes after the comments are posted, clear the agent comments with `hunk session comment clear --repo . --yes` and post them again.
 
 If Hunk is unavailable or no session is open, tell the user that Hunk review is unavailable, add the 1-3 sentence rationale under each review-order line, and give the key diff excerpts in full in the terminal.

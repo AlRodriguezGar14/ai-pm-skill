@@ -138,10 +138,12 @@ Reviewer: `APPROVE` or `FAIL`, correctness, design, scope, blocking findings, ni
 
 PM: acceptance decision, acceptance matrix, unresolved CEO decisions, final risk (including deferred nits), then the human feedback guide:
 
-1. Review plan: follow the `review-handoff` skill, with the CEO as the reviewer. It covers the review plan, the key diff excerpts, and the Hunk comments.
+1. Review plan: follow the `review-handoff` skill, with the CEO as the reviewer. It covers the review plan, the key diff excerpts, and the Hunk comments. Give its key diff excerpts after the commit plan.
 2. Manual QA steps, each with its expected result.
 3. Commit plan: one commit per feature, not one commit for everything. Each commit has a title (`[TICKET-ID] Imperative summary`), a body, and its files:
    - `+ path/to/new_file.ts`: one-line description.
    - `~ path/to/changed_file.ts`: one-line description.
+
+   Then the key diff excerpts.
 
 PR description (step 9): short summary, good-to-know notes, real output examples, a short test plan, and the ticket id.
