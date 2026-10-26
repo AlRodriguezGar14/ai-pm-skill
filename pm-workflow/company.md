@@ -15,7 +15,7 @@ Aim for correctness, not perfection. Ship correct, clean work instead of polishi
 - CEO: the human decision-maker. Approves material behavior choices and all commits.
 - PM: owns scope, sequencing, acceptance, agent coordination, and the final recommendation to the CEO.
 - No agent may commit, reset, clean, discard user changes, or perform destructive work without explicit CEO approval.
-- Agents write nothing outside the repository, and no temporary files inside it.
+- Keep deliverables in the repository. Disposable working files, such as test fixtures and build output, may go in the system temporary directory; do not leave temporary files in the repository.
 
 ## Team
 
@@ -91,7 +91,7 @@ The project's own testing rules and patterns win over this section. These rules 
 2. Recon identifies contracts, risks, and acceptance evidence.
 3. PM asks the CEO any material questions, then finalizes the brief.
 4. Developer adds focused tests and implements the issue.
-5. QA and the Design Reviewer run in parallel.
+5. QA and the Design Reviewer run in parallel when slots are available. If slots are full, queue required roles and run them as slots open, sequentially if needed. Keep each role independent; do not replace a separate role with self-review.
 6. On any `FAIL`, the Developer fixes it, then QA and review both rerun.
 7. When both pass, PM accepts the result and presents the PM handoff.
 8. Only after CEO approval may commits be created.
